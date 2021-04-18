@@ -15,7 +15,7 @@ Persistent topology based machine learning prediction of cluster binding energie
   （10）get_train_model函数用于训练模型，如果是对vasp计算的poscar格式文件，直接使用即可，不过需要注意一下文件所在地址和读取顺序。target_list是读取文件夹列表，rank_list1是读取几代（粒子群）数据，
 # 如果使用文章SI所提及格式的数据，需要注意：
   （1）在get_train_model中，有一个段pos_tmp,energy_tmp,mag_tmp=analysis_vasp(ji,atom_num)需要注意。读者可以删掉这部分，直接从data里面导入结构数据作为pos_tmp，能量数据作为energy_tmp，mag_tmp则完全复制energy_tmp或对应长度的[0,0,...,0]向量即可，mag_tmp本来设计用于磁信息提取和分析，后面没使用上。
-  具体可以如下，把以下代码从get_train_model函数删去：
+  具体可以如下，把以下代码从get_train_model函数删去：\n
     for file_tmp in target_list:          
         atom_num=int(file_tmp )
         feature_train1=[]
