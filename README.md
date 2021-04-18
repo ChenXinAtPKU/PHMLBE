@@ -2,7 +2,7 @@
 Persistent topology based machine learning prediction of cluster binding energies
 本人将于2021年7月1日毕业，之后将不再使用校园邮箱1801213239@pku.edu.cn，如果需要与本人连续，可以通过632746071@qq.com或微信chenxinaiguo。
 本代码适用于vasp软件计算结果的特征向量提取，也可用与其他计算软件结果，不过需要稍微对代码进行更改。
-如果直接用于vasp软件计算结果，需要注意以下几点：
+# 如果直接用于vasp软件计算结果，需要注意以下几点：
   （1）readposcar函数用于读取poscar文件里的结构和原子数信息，输出是晶格参数信息和原子坐标([lattice,pos_all])。
   （2）getsuperpoint是用于生成超胞，超胞用于粒子群搜索算法的初代结构切割，如从超胞中切出10个原子的所有可能排布（最密堆积）。
   （3）makeposcar和point2poscar函数是readposcar的反函数，用于生成poscar文件。
@@ -13,7 +13,7 @@ Persistent topology based machine learning prediction of cluster binding energie
   （8）calc_bonding_energy函数用于计算原子结合能。
   （9）pos2betti函数用于把点群数据转成betti特征向量，需要注意的是，点群数据是指在团簇的所有原子在1埃（A）坐标系下的原子坐标集合。如[[0,0,0],[1,0,0]]表示一个两个原子构成的团簇，其原子坐标分别是（0，0，0）和（1，0，0），两个原子相距1A。
   （10）get_train_model函数用于训练模型，如果是对vasp计算的poscar格式文件，直接使用即可，不过需要注意一下文件所在地址和读取顺序。target_list是读取文件夹列表，rank_list1是读取几代（粒子群）数据，
-如果使用文章SI所提及格式的数据，需要注意：
+# 如果使用文章SI所提及格式的数据，需要注意：
   （1）在get_train_model中，有一个段pos_tmp,energy_tmp,mag_tmp=analysis_vasp(ji,atom_num)需要注意。读者可以删掉这部分，直接从data里面导入结构数据作为pos_tmp，能量数据作为energy_tmp，mag_tmp则完全复制energy_tmp或对应长度的[0,0,...,0]向量即可，mag_tmp本来设计用于磁信息提取和分析，后面没使用上。
   具体可以如下，把以下代码从get_train_model函数删去：
     for file_tmp in target_list:          
