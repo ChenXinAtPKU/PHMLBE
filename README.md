@@ -32,11 +32,11 @@ Persistent topology based machine learning prediction of cluster binding energie
                 continue
             betti_tmp=pos2betti(pos_tmp)
             print(betti_tmp[0][0])
-#            far_tmp=pos_farest_dis(pos_tmp)
+            far_tmp=pos_farest_dis(pos_tmp)
             energy_tmp=calc_bonding_energy(energy_tmp,atom_num,if_even=1)
-#            for j3 in range(len(betti_tmp)):
-#                betti_tmp[j3].append(round(far_tmp[j3],2))
-#                betti_tmp[j3].append(round(far_tmp[j3]*far_k)/far_k)
+           for j3 in range(len(betti_tmp)):
+                betti_tmp[j3].append(round(far_tmp[j3],2))
+                betti_tmp[j3].append(round(far_tmp[j3]*far_k)/far_k)
             feature_train1=feature_train1+betti_tmp
             if label=='energy':
                 target_train1=target_train1+energy_tmp
