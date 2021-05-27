@@ -1,6 +1,6 @@
 # PHMLBE
 # Persistent topology based machine learning prediction of cluster binding energies
-本人将于2021年7月1日毕业，之后将不再使用校园邮箱1801213239@pku.edu.cn，如果需要与本人连续，可以通过632746071@qq.com或微信chenxinaiguo。
+
 使用代码前请一定详读《Persistent topology based machine learning prediction of cluster binding energies》，其中对代码的核心思想有详细解释。
 本代码适用于vasp软件计算结果的特征向量提取，也可用与其他计算软件结果，不过需要稍微对代码进行更改。
 # 如果直接用于vasp软件计算结果，需要注意以下几点：
